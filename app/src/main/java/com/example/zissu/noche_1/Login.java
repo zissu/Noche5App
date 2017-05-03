@@ -29,24 +29,21 @@ public class Login extends Fragment  {
         // Inflate the layout for this fragment
 
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-        log_reg = (Button) rootView.findViewById(R.id.bRegister);
+        Button log_reg = (Button) rootView.findViewById(R.id.bRegister);
         log_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Fragment register = new Register();
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.content_main_layout, register );
-                transaction.addToBackStack(null);
-                transaction.commit();
-
-
-
-
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.login_l, register);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        return rootView;
     }
 
 
