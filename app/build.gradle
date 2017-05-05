@@ -31,4 +31,6 @@ dependencies {
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     compile 'org.apache.httpcomponents:httpclient:4.5'
     testCompile 'junit:junit:4.12'
+    compile 'com.google.firebase:firebase-auth:10.2.4'
 }
+apply plugin: 'com.google.gms.google-services'

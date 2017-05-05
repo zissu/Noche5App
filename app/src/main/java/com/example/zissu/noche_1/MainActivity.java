@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
 
         b_login = (Button) findViewById(R.id.bLogin);
         b_login.setOnClickListener((View.OnClickListener) this);
-        b_register = (Button) findViewById(R.id.bRegister);
+        b_register = (Button) findViewById(R.id.bRegister1);
         b_register.setOnClickListener((View.OnClickListener) this);
 
 
