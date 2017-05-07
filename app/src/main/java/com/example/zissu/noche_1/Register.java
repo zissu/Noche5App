@@ -3,6 +3,7 @@ package com.example.zissu.noche_1;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -70,9 +71,16 @@ public class Register extends Fragment implements View.OnClickListener {
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        //email and password with at least 6 digits
+                        if (task.isSuccessful())
+                        {
                             Toast.makeText(getActivity(), "successfully", Toast.LENGTH_SHORT).show();
-                        }else{
+
+                            startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+
+                        }
+                        else
+                        {
                             Toast.makeText(getActivity(), "try again", Toast.LENGTH_SHORT).show();
                         }
                     }
